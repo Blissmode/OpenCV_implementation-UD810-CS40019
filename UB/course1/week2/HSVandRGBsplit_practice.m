@@ -1,0 +1,31 @@
+RGB = imread('image1.jpg');
+B1 = RGB(:,:,1);
+G1 = RGB(:,:,2);
+R1 = RGB(:,:,3);
+imshow(RGB);
+fil = zeros(size(RGB,1),size(RGB,2),'uint8');
+B = cat(3,fil,fil,B1);
+G = cat(3,fil,G1,fil);
+R = cat(3,R1,fil,fil);
+subplot(2,2,1);
+imshow(RGB);
+subplot(2,2,2);
+imshow(B);
+subplot(2,2,3);
+imshow(R);
+subplot(2,2,4);
+imshow(G);
+
+HSV = rgb2hsv(RGB);
+H = HSV(:,:,1);
+S = HSV(:,:,2);
+V = HSV(:,:,3);
+
+subplot(2,2,1);
+imshow(HSV);
+subplot(2,2,2);
+imshow(H);
+subplot(2,2,3);
+imshow(S);
+subplot(2,2,4);
+imshow(V);
